@@ -1,0 +1,69 @@
+* {
+    font-family: "Signika";
+    font-size: 16px;
+}
+
+.disabled {
+    pointer-events: none;
+}
+
+.content {
+    margin-top: -160px;
+    padding-left: 25px;
+    background-color: #fff;
+    position: relative;
+}
+
+@media (max-width: 767px) {
+    .content{
+        margin-top: 0px;
+    }
+}
+
+.img-responsive {
+    width:100%;
+    height:650px;
+}
+
+.instructie {
+    width: 300px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid;
+    color: #e93a8e;
+}
+
+.btn-custom {
+    border: 2px solid #e93a8e;
+    border-radius: 0px;
+    color: #e93a8e;
+    background-color: transparent;
+    margin-bottom: 5px;
+}
+
+.btn-custom:hover {
+    color: #fff;
+    background-color: #e93a8e;
+}
+
+.btn-custom.active{
+    color: #fff;
+    background-color: #e93a8e;
+}
+
+h1, h3 {
+    color:#e93a8e;
+}
+
+.txt {
+    color:#e93a8e;
+}
+
+#map {
+    width:100%;
+    height:450px;
+    margin-bottom: 30px;
+}
+
+.admin_link {
+    margin:5px;
+}

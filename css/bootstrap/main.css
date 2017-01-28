@@ -1,0 +1,29 @@
+table {
+    -webkit-border-horizontal-spacing: 8px;
+    -webkit-border-vertical-spacing: 0px;
+    table-layout: fixed;
+    width: 70%;
+}
+
+td {
+    border: 1px solid;
+    height: 16px;
+}
+
+td.transp {
+    border: 1px transparent;
+}
+
+td:hover {
+    background-color: #94bfed;
+}
+
+td.bezet{
+    background-color: red;
+
+}
+
+.image {
+    width:700px;
+    height:400px;
+}
