@@ -7,11 +7,35 @@ if(!isset($_SESSION['name'])){
     exit;
 }
 
-//Get the result set from the database with a SQL query
-$query = "SELECT * FROM appointment";
+//$query = "SELECT *, tijden.tijd
+//          FROM appointment
+//          INNER JOIN tijden
+//          INNER JOIN appointment_tijden
+//          WHERE appointment.tijden_id = appointment_tijden.appointment_id AND
+//                tijden.id = appointment_tijden.tijden_id";
+
+//Switch tussen oplopend en aflopend
+switch($_GET['dir']){
+
+    case "asc":
+        $orderBy = " ORDER BY datum ASC";
+    break;
+
+    case "desc":
+        $orderBy = " ORDER BY datum DESC";
+    break;
+
+    default:
+        $orderBy = " ORDER BY datum DESC";
+    break;
+}
+
+//Voer de query uit op de database
+$query = "SELECT * FROM appointment" . $orderBy;
+
 $result = mysqli_query($db, $query);
 
-//Loop through the result to create a custom array
+//Zet de resulataten in een array
 $appointments = [];
 while ($row = mysqli_fetch_assoc($result)) {
     $appointments[] = $row;
@@ -45,7 +69,7 @@ mysqli_close($db);
             <th>Achternaam</th>
             <th>E-mail</th>
             <th>Telefoonnummer</th>
-            <th>Datum</th>
+            <th>Datum<a href="admin_overzicht.php?dir=asc">ASC</a>/<a href="admin_overzicht.php?dir=desc">DESC</a></th>
             <th>Tijd</th>
             <th colspan="2"></th>
         </tr>
