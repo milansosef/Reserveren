@@ -22,6 +22,7 @@ if (isset($_POST['submit'])) {
                 FROM login
                 WHERE email = '$email'";
 
+        //query uitvoeren
         $result = mysqli_query($db, $sql);
 
         $user = mysqli_fetch_assoc($result);
@@ -39,7 +40,6 @@ if (isset($_POST['submit'])) {
         }
     }
 }
-
 
 
     // Ja

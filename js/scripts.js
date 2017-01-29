@@ -54,8 +54,6 @@ function initCalendar(){
             //Checkboxes met id tijden komen tevoorschijn
             tijden.style.display = "block";
 
-
-
             //this refereerd naar de dag die je aanklikt
             console.log(this);
 
