@@ -54,7 +54,11 @@ function initCalendar(){
             //Checkboxes met id tijden komen tevoorschijn
             tijden.style.display = "block";
 
+
+
             //this refereerd naar de dag die je aanklikt
+            console.log(this);
+
             var dagClick = $(this).data("day");
             var maandClick = $(this).data("month");
             var jaarClick = $(this).data("year");
@@ -63,12 +67,13 @@ function initCalendar(){
             if(dagClick < 10){
                 dagClick = '0' + dagClick;
             }
-            else if(maandClick < 10){
+
+            if(maandClick < 10){
                 maandClick = '0' + maandClick;
             }
 
             //Een datum staat opgeslagen in de database als 'DD-MM-yy'
-            var dateAjax = dagClick + '-' + maandClick + '-' +jaarClick;
+            var dateAjax = jaarClick + '-' + maandClick + '-' + dagClick;
             var datumClick = '' + jaarClick + maandClick + dagClick;
 
             //Als de datum waar je op klikt eerder is dan de huidige datum: alert!
